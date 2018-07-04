@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence" version="2.1">
+    <persistence-unit name="cdbookstorePU" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>java:jboss/datasources/cdbookstoreDS</jta-data-source>
+        <class>org.agoncal.application.cdbookstore.model.Address</class>
+        <class>org.agoncal.application.cdbookstore.model.Artist</class>
+        <class>org.agoncal.application.cdbookstore.model.Author</class>
+        <class>org.agoncal.application.cdbookstore.model.Book</class>
+        <class>org.agoncal.application.cdbookstore.model.Category</class>
+        <class>org.agoncal.application.cdbookstore.model.CD</class>
+        <class>org.agoncal.application.cdbookstore.model.Country</class>
+        <class>org.agoncal.application.cdbookstore.model.CreditCard</class>
+        <class>org.agoncal.application.cdbookstore.model.Genre</class>
+        <class>org.agoncal.application.cdbookstore.model.Item</class>
+        <class>org.agoncal.application.cdbookstore.model.Label</class>
+        <class>org.agoncal.application.cdbookstore.model.LanguageConverter</class>
+        <class>org.agoncal.application.cdbookstore.model.Musician</class>
+        <class>org.agoncal.application.cdbookstore.model.Publisher</class>
+        <class>org.agoncal.application.cdbookstore.model.User</class>
+        <properties>
+            <property name="hibernate.archive.autodetection" value="class" />
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+            <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/cdbookstoreDB" />
+            <property name="hibernate.connection.username" value="postgres" />
+            <property name="hibernate.connection.password" value="p0$tgre$" />
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+            <property name="hibernate.show_sql" value="true" />
+            <property name="hibernate.format_sql" value="true" />
+            <property name="hibernate.hbm2ddl.import_files" value="META-INF/import.sql" />
+            <!--<property name="hibernate.hbm2ddl.import_files_sql_extractor" value="org.hibernate.tool.hbm2ddl.MultipleLinesSqlCommandExtractor" />-->
+        </properties>
+    </persistence-unit>       
+</persistence>
